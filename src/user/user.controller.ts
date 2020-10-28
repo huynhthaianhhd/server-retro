@@ -13,7 +13,7 @@ import { UserService } from './user.service';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Get('user')
+  @Get()
    async create(): Promise<String> {
     return 'hello';
   }
