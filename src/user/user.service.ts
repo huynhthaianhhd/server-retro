@@ -1,4 +1,4 @@
-import { UserData, UserRO } from './user.interface';
+import { User } from './user.interface';
 import { Injectable } from '@nestjs/common';
 
 import { InjectRepository } from '@nestjs/typeorm';
@@ -10,7 +10,7 @@ export class UserService {
         @InjectRepository(UserEntity)
         private readonly userRepository: Repository<UserEntity>
       ) {}
-    async create(user : UserData): Promise<UserData>{
+    async create(user : User): Promise<User>{
         return await this.userRepository.save(user);
     }
 }

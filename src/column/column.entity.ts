@@ -1,4 +1,6 @@
-import { Entity , Column, PrimaryGeneratedColumn } from 'typeorm';
+import { TagEntity } from './../tag/tag.entity';
+import { BoardEntity } from './../board/board.entity';
+import { Entity , Column, PrimaryGeneratedColumn, ManyToOne, OneToMany} from 'typeorm';
 
 @Entity('column')
 export class ColumnEntity {
@@ -7,12 +9,14 @@ export class ColumnEntity {
   id: number;
 
   @Column()
-  boardid: string;
-
-  @Column()
   columnname: string;
 
   @Column()
   isdelete: boolean;
   
+  @ManyToOne(() => BoardEntity, board => board.columns)
+    board: BoardEntity;
+
+  @OneToMany(()=> TagEntity, tag => tag.column)
+    tags: TagEntity[];
 }

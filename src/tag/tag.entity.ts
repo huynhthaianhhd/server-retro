@@ -1,4 +1,5 @@
-import { Entity , Column, PrimaryGeneratedColumn } from 'typeorm';
+import { ColumnEntity } from './../column/column.entity';
+import { Entity , Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 @Entity('tag')
 export class TagEntity {
@@ -12,4 +13,6 @@ export class TagEntity {
   @Column()
   isdelete: boolean;
 
+  @ManyToOne(() => ColumnEntity, column => column.tags)
+    column: ColumnEntity;
 }
