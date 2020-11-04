@@ -3,6 +3,5 @@ export interface User {
   id?: number;
   name?: string;
   email?: string;
-  password?: string;
-  boards: BoardEntity[];
+  token?: string;
 }

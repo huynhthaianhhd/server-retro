@@ -5,5 +5,4 @@ export interface Column {
     columnname?: string;
     isDelete?: string;
     board: BoardEntity;
-    tags: TagEntity[];
   }

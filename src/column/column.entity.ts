@@ -9,7 +9,7 @@ export class ColumnEntity {
   id: number;
 
   @Column()
-  columnname: string;
+  typeColumn: number;
 
   @Column()
   isdelete: boolean;
