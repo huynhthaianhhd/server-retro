@@ -1,12 +1,12 @@
 import { BoardEntity } from './../board/board.entity';
-import { Entity , Column, PrimaryGeneratedColumn, OneToMany,BeforeInsert} from 'typeorm';
+import { Entity , Column, PrimaryColumn, OneToMany,BeforeInsert} from 'typeorm';
 import * as argon2 from 'argon2';
 
 @Entity('user')
 export class UserEntity {
 
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryColumn()
+  id: string;
 
   @Column()
   name: string;

@@ -1,7 +1,7 @@
 import { ColumnEntity } from './../column/column.entity';
-export interface Column {
+export interface Tag {
     id?: number;
     tagname?: string;
     isDelete?: string;
-    column: ColumnEntity;
+    order?: string;
 }

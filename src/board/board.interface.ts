@@ -2,7 +2,7 @@ import { ColumnEntity } from './../column/column.entity';
 import { UserEntity } from './../user/user.entity';
 
 export interface Board {
-  id?: number;
+  id?: string;
   boardname?: string;
   create?: string;
   isDelete?: string;

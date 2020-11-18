@@ -1,12 +1,12 @@
 import { ColumnEntity } from './../column/column.entity';
 import { UserEntity } from './../user/user.entity';
-import { Entity , Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
+import { Entity , Column, PrimaryColumn, ManyToOne, OneToMany } from 'typeorm';
 
 @Entity('board')
 export class BoardEntity {
 
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryColumn()
+  id: string;
 
   @Column()
   boardname: string;
@@ -22,5 +22,4 @@ export class BoardEntity {
 
   @OneToMany(()=> ColumnEntity, column => column.board)
     columns: ColumnEntity[];
-
 }

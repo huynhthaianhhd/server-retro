@@ -26,7 +26,18 @@ export class UserController {
   async getUser(@Param() params) {
     return this.userService.findById(params.id);
   }
-   @Post('login')
+  @Post('update')
+  async update(@Body() user: any): Promise<Object> {
+    const _user = await this.userService.update(user);
+    return _user;
+  }
+  @Post('update-pass')
+  async updatePassword(@Body() user: any): Promise<Object> {
+    console.log('user',user);
+    const _user = await this.userService.updatePassword(user);
+    return _user;
+  }
+  @Post('login')
   async login(@Body() loginUserDto: LoginUserDto): Promise<User> {
     const _user = await this.userService.findOne(loginUserDto);
 

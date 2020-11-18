@@ -11,7 +11,7 @@ export class TagEntity {
   tagname: string;
 
   @Column()
-  isdelete: boolean;
+  order: number;
 
   @ManyToOne(() => ColumnEntity, column => column.tags)
     column: ColumnEntity;
